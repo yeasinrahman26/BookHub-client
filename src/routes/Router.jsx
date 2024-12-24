@@ -1,6 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
 import Home from "../Pages/HomePage/Home";
+import Login from "../Pages/Navbar/Login";
+import Register from "../Pages/Navbar/Register";
+import AllBook from '../Pages/AllBook/AllBook'
+import AddBook from "../Pages/AddBook/AddBook";
+import BorrowedBooks from "../Pages/BorrowedBooks/BorrowedBooks";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -12,11 +17,33 @@ const router = createBrowserRouter([
       </div>
     ),
     children: [
-        {
-            path:'/',
-            element:<Home></Home>
-        },
-    ]
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+
+      {
+        path: "allBook",
+        element: <AllBook></AllBook>,
+      },
+      {
+        path: "addBook",
+        element: <AddBook></AddBook>
+      },
+      {
+        path: "borrowedBooks",
+        element: <BorrowedBooks></BorrowedBooks>
+      },
+    ],
+    
   },
 ]);
 
