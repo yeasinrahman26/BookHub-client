@@ -21,7 +21,7 @@ const links = (
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="bg-base-300 rounded-md">
       <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown">
