@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import AuthContext from "../../Auth/AuthContext";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const GoogleLogin = () => {
     const {googleSignIn}=useContext(AuthContext)
@@ -9,7 +10,14 @@ const GoogleLogin = () => {
   const handleGoogle = () => {
     googleSignIn()
     .then(result=>{
-        console.log(result.user)
+       const user=result.user
+       Swal.fire({
+         position: "top-center",
+         icon: "success",
+         title: `welcome ${user.displayName}`,
+         showConfirmButton: false,
+         timer: 1000,
+       });
         navigate('/')
     }).catch(error=>{
         console.log(error.message)

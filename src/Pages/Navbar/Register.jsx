@@ -2,13 +2,14 @@ import { Link, useNavigate } from "react-router-dom";
 import GoogleLogin from "./GoogleLogin";
 import { useContext, useState } from "react";
 import AuthContext from "../../Auth/AuthContext";
+import Swal from "sweetalert2";
 
 const Register = () => {
 
     const { createUser, setUser, updateProfileUser } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const [error,setError]=useState({})
+    const [error,setError,loading]=useState({})
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -32,16 +33,31 @@ const Register = () => {
     .then(result=>{
         const user=result.user;
         console.log(user)
-        setUser(user)
         updateProfileUser({
           displayName: name,
           photoURL: photo,
-        }).then(() => {
-            // console.log(user);
+        })
+        .then(() => { 
+          Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: `welcome ${user.displayName}`,
+            showConfirmButton: false,
+            timer: 1000,
+          });
+          setUser(user);
+          loading(true)
           navigate("/");
+          
         });
     }).catch(error=>{
-        console.log(error);
+      Swal.fire({
+        icon: "error",
+        title: `${error.message}`,
+        text: "Something went wrong!",
+        
+      });
+        // console.log(error);
     })
 
   };

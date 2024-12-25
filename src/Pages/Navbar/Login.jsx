@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import GoogleLogin from "./GoogleLogin";
 import { useContext } from "react";
 import AuthContext from "../../Auth/AuthContext";
+import Swal from "sweetalert2";
 
 const Login = () => {
 
@@ -19,11 +20,22 @@ const Login = () => {
 
     loginUser(email,password)
     .then(result=>{
-      alert("welcome", result.user)
+      const user=result.user
+      Swal.fire({
+                  position: "top-center",
+                  icon: "success",
+                  title: `welcome ${user.displayName}`,
+                  showConfirmButton: false,
+                  timer: 1000,
+                });
       navigate('/')
     })
     .catch(error=>{
-      alert(error.message);
+      Swal.fire({
+        icon: "error",
+        title: "Check email & Password !",
+        text: `${error.message}`,
+      });
     })
 
 

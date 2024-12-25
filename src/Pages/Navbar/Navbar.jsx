@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import AuthContext from "../../Auth/AuthContext";
+import { IoMdLogOut } from "react-icons/io";
+
 
 const links = (
   <>
@@ -66,22 +68,27 @@ const Navbar = () => {
         <div className="navbar-end gap-2">
           <div className="flex  md:flex-row items-center justify-between gap-2">
             {user ? (
-              <div className="flex items-center gap-4">
-                <h1>{user?.displayName}</h1>
-                <div className="avatar">
-                  <div className="ring-primary ring-offset-base-100 w-10 rounded-full ring ring-offset-2">
-                    <img
-                      src={
-                        user?.photoURL ||
-                        "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                      }
-                    ></img>
+              <>
+                {/* Avatar with name on hover */}
+                <div className="relative group">
+                  <div className="avatar ">
+                    <div className="ring-primary ring-offset-base-100 w-10 mt-1 mx-1 rounded-full ring ring-offset-1">
+                      <img
+                        src={
+                          user?.photoURL ||
+                          "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                        }
+                      ></img>
+                    </div>
+                  </div>
+                  <div className="absolute -bottom-12 md:bottom-0 w-40 -left-12 md:-left-40 right-0 px-0 pb-3  text-black font-bold  opacity-0 group-hover:opacity-100 transition-opacity">
+                    {user.displayName}
                   </div>
                 </div>
-                <button onClick={logout} className="btn">
-                  Logout
+                <button onClick={logout} className="btn  bg-red-600">
+                  <IoMdLogOut className="font-extrabold text-3xl" />
                 </button>
-              </div>
+              </>
             ) : (
               <div className="flex gap-2">
                 <Link to="/login">
