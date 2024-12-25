@@ -5,7 +5,7 @@ import AuthContext from "../../Auth/AuthContext";
 
 const Register = () => {
 
-    const { createUser , } = useContext(AuthContext);
+    const { createUser, setUser, updateProfileUser } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const [error,setError]=useState({})
@@ -14,10 +14,11 @@ const Register = () => {
     e.preventDefault();
     const form = e.target;
     const name=form.name.value;
-    const url=form.url.value;
+    const photo=form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name,url);
+
+    console.log(name,photo);
 
     // password validation
     const regex = /^[A-Za-z]{6,}$/;
@@ -29,8 +30,16 @@ const Register = () => {
     // create user
     createUser(email, password)
     .then(result=>{
-        console.log(result.user)
-        navigate('/')
+        const user=result.user;
+        console.log(user)
+        setUser(user)
+        updateProfileUser({
+          displayName: name,
+          photoURL: photo,
+        }).then(() => {
+            // console.log(user);
+          navigate("/");
+        });
     }).catch(error=>{
         console.log(error);
     })
@@ -63,7 +72,7 @@ const Register = () => {
               </label>
               <input
                 type="url"
-                name="url"
+                name="photo"
                 placeholder="https://example.com/photo.jpg"
                 className="input input-bordered"
                 required
