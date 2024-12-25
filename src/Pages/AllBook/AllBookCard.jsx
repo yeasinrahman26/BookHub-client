@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const AllBookCard = ({book}) => {
@@ -46,9 +47,12 @@ const AllBookCard = ({book}) => {
             {truncateDescription(short_description, 5)}
           </p>
           <p className="text-gray-700 ">
-            <strong>Book Content:</strong> {truncateDescription(book_content,10)}
+            <strong>Book Content:</strong>{" "}
+            {truncateDescription(book_content, 10)}
           </p>
-          <button className="btn btn-primary ">View Details</button>
+          <Link to={`/books/${_id}`}>
+            <button className="btn btn-primary ">View Details</button>
+          </Link>
         </div>
       </div>
     );

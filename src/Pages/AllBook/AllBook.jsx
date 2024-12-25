@@ -21,8 +21,8 @@ const AllBook = () => {
         <Helmet>
           <title>BookHub || All Book</title>
         </Helmet>
-        <h1 className="text-5xl text-center my-10 ">
-          I am All books: {books.length}{" "}
+        <h1 className="text-5xl font-bold text-center my-10 ">
+          All Books: {books.length}{" "}
         </h1>
         <div className="grid gap-10 px-2 grid-cols-1 md:grid-cols-2 mb-10 lg:grid-cols-3 ">
           {books.map((book) => (
