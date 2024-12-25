@@ -3,6 +3,7 @@ import GoogleLogin from "./GoogleLogin";
 import { useContext } from "react";
 import AuthContext from "../../Auth/AuthContext";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
 
@@ -45,6 +46,9 @@ const Login = () => {
 
   return (
     <div className="hero bg-base-100 min-h-screen">
+    <Helmet>
+        <title>BookHub || Login</title>
+      </Helmet>
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center "></div>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">

@@ -1,10 +1,14 @@
+import { Helmet } from "react-helmet-async";
 
 
 const AllBook = () => {
     return (
-        <div>
-            <h1 className="text-5xl">I am All books</h1>
-        </div>
+      <div>
+        <Helmet>
+          <title>BookHub || All Book</title>
+        </Helmet>
+        <h1 className="text-5xl">I am All books</h1>
+      </div>
     );
 };
 

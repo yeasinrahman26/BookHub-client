@@ -3,6 +3,7 @@ import GoogleLogin from "./GoogleLogin";
 import { useContext, useState } from "react";
 import AuthContext from "../../Auth/AuthContext";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
 
@@ -64,6 +65,9 @@ const Register = () => {
 
   return (
     <div className="hero bg-base-100 min-h-screen">
+      <Helmet>
+        <title>BookHub || Register</title>
+      </Helmet>
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <h1 className="text-5xl text-center pt-5 mx-4 md:mx-9 font-bold">
@@ -117,9 +121,9 @@ const Register = () => {
                 className="input input-bordered"
                 required
               />
-            {error.password && (
-              <label className="label text-red-600">{error.password} </label>
-            )}
+              {error.password && (
+                <label className="label text-red-600">{error.password} </label>
+              )}
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-primary text-white bg-[#046cf5]">
