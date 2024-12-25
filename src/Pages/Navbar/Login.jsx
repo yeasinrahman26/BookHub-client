@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import GoogleLogin from "./GoogleLogin";
 import { useContext } from "react";
 import AuthContext from "../../Auth/AuthContext";
@@ -8,6 +8,8 @@ const Login = () => {
 
   const {loginUser}=useContext(AuthContext)
   const navigate=useNavigate();
+  const location=useLocation();
+  const from = location.state || "/";
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -28,7 +30,7 @@ const Login = () => {
                   showConfirmButton: false,
                   timer: 1000,
                 });
-      navigate('/')
+      navigate(from)
     })
     .catch(error=>{
       Swal.fire({

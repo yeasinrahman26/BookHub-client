@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import AuthContext from "../../Auth/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const GoogleLogin = () => {
     const {googleSignIn}=useContext(AuthContext)
     const navigate = useNavigate();
+    const location =useLocation()
+    const from = location.state || "/";
   const handleGoogle = () => {
     googleSignIn()
     .then(result=>{
@@ -18,7 +20,7 @@ const GoogleLogin = () => {
          showConfirmButton: false,
          timer: 1000,
        });
-        navigate('/')
+        navigate(from)
     }).catch(error=>{
         console.log(error.message)
     })
@@ -27,7 +29,7 @@ const GoogleLogin = () => {
     <div>
       <div>
         <button onClick={handleGoogle} className="btn bg-orange-400 font-bold ">
-          <FaGoogle className="text-red-500  to text-3xl " /> Google SingIn
+          <FaGoogle className="text-red-500  to text-3xl " /> Google SignIn
         </button>
       </div>
     </div>
