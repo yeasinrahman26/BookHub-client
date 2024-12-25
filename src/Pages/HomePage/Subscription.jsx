@@ -1,7 +1,7 @@
 const Subscription = () => {
   return (
     <section>
-      <div className="bg-gray-100 py-12">
+      <div className="bg-gray-100 mb-10 py-12">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-6">Choose Your Plan</h2>
           <p className="text-lg text-gray-600 mb-10">

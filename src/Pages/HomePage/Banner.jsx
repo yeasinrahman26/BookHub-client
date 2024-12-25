@@ -38,14 +38,14 @@ const Banner = () => {
       },
     ];
     return (
-      <div>
-        <div className="w-full py-10 mx-auto">
-          <Slider {...sliderSettings}>
+      <div className="  px-10 md:px-0 ">
+        <div className="w-full   py-10 mx-auto">
+          <Slider  {...sliderSettings}>
             {slides.map((slide) => (
               <div
                 key={slide.id}
                 className="flex flex-col items-center 
-                justify-center h-64 md:h-40 bg-gradient-to-r from-[#0e0c57]  to-blue-500 text-white rounded-lg shadow-lg p-8"
+                justify-center h-62 md:h-40 bg-gradient-to-r from-[#0e0c57]  to-blue-500 text-white rounded-lg shadow-lg p-8"
               >
                 <h2 className="text-3xl font-bold mb-4">{slide.title}</h2>
                 <p className="text-lg">{slide.description}</p>

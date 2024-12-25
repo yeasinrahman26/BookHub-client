@@ -6,7 +6,7 @@ const Footer = () => {
         <aside>
           <div className='flex items-center justify-center gap-4 '>
             <img className="w-10 pb-2" src={icon} alt="" />
-            <p className="text-2xl font-semibold">BookHub Ltd</p>
+            <p className="text-2xl font-semibold">BookHub </p>
           </div>
           <p> Providing reliable books since 2013</p>
         </aside>
