@@ -1,13 +1,13 @@
-
+import icon from '../../assets/img/icon.png'
 
 const Footer = () => {
     return (
       <footer className="footer bg-base-300 mt-5 text-base-content p-10">
         <aside>
-          <p className="text-2xl font-semibold">
-            BookHub Ltd
-
-          </p>
+          <div className='flex items-center justify-center gap-4 '>
+            <img className="w-10 pb-2" src={icon} alt="" />
+            <p className="text-2xl font-semibold">BookHub Ltd</p>
+          </div>
           <p> Providing reliable books since 2013</p>
         </aside>
         <nav>
