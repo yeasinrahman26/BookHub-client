@@ -1,7 +1,7 @@
 import Banner from "./Banner";
 import BookCategories from "./BookCategories";
 import Review from "./Review";
-
+import Subscription from "./Subscription";
 
 const Home = () => {
   return (
@@ -9,7 +9,7 @@ const Home = () => {
       <Banner></Banner>
       <BookCategories></BookCategories>
       <Review></Review>
-    
+      <Subscription></Subscription>
     </div>
   );
 };
