@@ -2,7 +2,7 @@ import icon from '../../assets/img/icon.png'
 
 const Footer = () => {
     return (
-      <footer className="footer bg-base-300 mt-5 text-base-content p-10">
+      <footer className="footer bg-base-300  text-base-content p-10">
         <aside>
           <div className='flex items-center justify-center gap-4 '>
             <img className="w-10 pb-2" src={icon} alt="" />

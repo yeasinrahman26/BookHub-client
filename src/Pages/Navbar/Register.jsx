@@ -1,9 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import GoogleLogin from "./GoogleLogin";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import AuthContext from "../../Auth/AuthContext";
 
 const Register = () => {
 
+    const { createUser , } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const [error,setError]=useState({})
 
@@ -14,19 +17,28 @@ const Register = () => {
     const url=form.url.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password,url,name);
+    console.log(name,url);
 
-
+    // password validation
     const regex = /^[A-Za-z]{6,}$/;
     if (!regex.test(password)) {
       setError({...error,password:"Password must be 6 characters with uppercase, lowercase, and a number."})
       return
     }
 
+    // create user
+    createUser(email, password)
+    .then(result=>{
+        console.log(result.user)
+        navigate('/')
+    }).catch(error=>{
+        console.log(error);
+    })
+
   };
 
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero bg-base-100 min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <h1 className="text-5xl text-center pt-5 mx-4 md:mx-9 font-bold">
