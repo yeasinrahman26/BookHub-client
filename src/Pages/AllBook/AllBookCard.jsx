@@ -23,7 +23,7 @@ const AllBookCard = ({book}) => {
         : description;
     };
     return (
-      <div className="card bg-base-100 border-2 shadow-xl p-4 rounded-lg">
+      <div className="card bg-base-100  border-2 shadow-xl p-4 rounded-lg">
         <figure>
           <img
             src={image}
