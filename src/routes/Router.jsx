@@ -7,7 +7,8 @@ import AllBook from '../Pages/AllBook/AllBook'
 import AddBook from "../Pages/AddBook/AddBook";
 import BorrowedBooks from "../Pages/BorrowedBooks/BorrowedBooks";
 import PrivetRoute from "./PrivetRoute";
-import BookDetails from "../Pages/AllBook/BookDetails";
+
+import UpdateBook from "../Pages/AllBook/UpdateBook";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
         path: "books/:id",
         element: (
           <PrivetRoute>
-            <BookDetails></BookDetails>
+            <UpdateBook></UpdateBook>
           </PrivetRoute>
         ),
         loader: ({ params }) =>

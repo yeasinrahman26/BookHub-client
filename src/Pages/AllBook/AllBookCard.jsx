@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 
 
+
+
+// eslint-disable-next-line react/prop-types
 const AllBookCard = ({book}) => {
     const {
       _id,
@@ -51,7 +54,7 @@ const AllBookCard = ({book}) => {
             {truncateDescription(book_content, 10)}
           </p>
           <Link to={`/books/${_id}`}>
-            <button className="btn btn-primary ">View Details</button>
+            <button className="btn btn-primary ">Update</button>
           </Link>
         </div>
       </div>
