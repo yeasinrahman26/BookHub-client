@@ -1,8 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import Banner from "./Banner";
-import BookCategories from "./BookCategories";
+
 import Review from "./Review";
 import Subscription from "./Subscription";
+import BookCategoryCard from "./BookCategoryCard";
 
 const Home = () => {
   return (
@@ -11,7 +12,8 @@ const Home = () => {
         <title>BookHub || Home</title>
       </Helmet>
       <Banner></Banner>
-      <BookCategories></BookCategories>
+      <BookCategoryCard></BookCategoryCard>
+
       <Review></Review>
       <Subscription></Subscription>
     </div>

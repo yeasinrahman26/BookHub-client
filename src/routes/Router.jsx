@@ -9,6 +9,10 @@ import BorrowedBooks from "../Pages/BorrowedBooks/BorrowedBooks";
 import PrivetRoute from "./PrivetRoute";
 
 import UpdateBook from "../Pages/AllBook/UpdateBook";
+import Novel from "../Pages/HomePage/Novel";
+import Drama from "../Pages/HomePage/Drama";
+import SciFi from "../Pages/HomePage/SciFi";
+import Thriller from "../Pages/HomePage/Thriller";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,6 +37,38 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
 
+      {
+        path: "/books/category/Sci-Fi`",
+        element: (
+          <PrivetRoute>
+            <SciFi></SciFi>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/books/category/Thriller",
+        element: (
+          <PrivetRoute>
+            <Thriller></Thriller>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/books/category/Drama",
+        element: (
+          <PrivetRoute>
+            <Drama></Drama>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/books/category/Novel",
+        element: (
+          <PrivetRoute>
+            <Novel></Novel>
+          </PrivetRoute>
+        ),
+      },
       {
         path: "allBook",
         element: (
