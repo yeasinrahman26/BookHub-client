@@ -1,12 +1,14 @@
 import { useContext, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import AuthContext from "../../Auth/AuthContext";
 
 const BookDetails = () => {
   const book = useLoaderData();
+  
   const { user } = useContext(AuthContext);
   const {
+    _id,
     title,
     image,
     quantity,
@@ -17,26 +19,38 @@ const BookDetails = () => {
     book_content,
   } = book;
 
-  const [submit,setSubmit]=useState(false)
-  const handleBorrow = (e, book) => {
-    setSubmit(true)
+  const [submit, setSubmit] = useState(false);
+  const handleBorrow = (e) => {
+    setSubmit(true);
     e.preventDefault();
 
     // Collecting form data
     const form = e.target;
     const returnDate = form.returnDate.value;
+    const userName = user.displayName;
+    const userEmail = user.email;
+
+    const bookDetails = {
+      book_id: _id,
+      title: title,
+      image: image,
+      quantity: quantity,
+      author_name: author_name,
+      category: category,
+      short_description: short_description,
+      rating: rating,
+      book_content: book_content,
+      userName,
+      userEmail,
+      returnDate,
+    };
 
     fetch("http://localhost:5000/borrowed", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        ...book,
-        userName: user?.displayName,
-        userEmail: user?.email,
-        returnDate,
-      }),
+      body: JSON.stringify(bookDetails),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -51,9 +65,16 @@ const BookDetails = () => {
           console.log(data.insertedId);
           const modal = document.getElementById("auth-modal");
           modal.checked = false;
+        } 
+        else {
+          Swal.fire({
+            position: "top-center",
+            icon: "error",
+            title: "Book already  Borrowed !",
+            showConfirmButton: false,
+            timer: 1500,
+          });
         }
-        
-        
       });
   };
 
@@ -105,10 +126,7 @@ const BookDetails = () => {
                   ✕
                 </label>
                 <h3 className="text-lg font-bold">Fill in the details</h3>
-                <form
-                  className="space-y-4 mt-4"
-                  onSubmit={(e) => handleBorrow(e, book)}
-                >
+                <form className="space-y-4 mt-4" onSubmit={handleBorrow}>
                   <div className="form-control">
                     <label className="label">
                       <span className="label-text">Your name</span>
@@ -147,13 +165,11 @@ const BookDetails = () => {
                     />
                   </div>
                   <button
-                  disabled={submit}
+                    disabled={submit}
                     htmlFor="auth-modal"
                     className="btn btn-primary  w-full py-2 mt-4"
                   >
-                    {
-                      submit? "Submitted":"Submit"
-                    }
+                    {submit ? "Submitted" : "Submit"}
                   </button>
                 </form>
               </div>
