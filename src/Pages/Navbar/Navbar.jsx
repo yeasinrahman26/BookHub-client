@@ -26,7 +26,7 @@ const links = (
 
 const Navbar = () => {
   const { logout,user}=useContext(AuthContext)
-  console.log(user);
+  
 
   
   return (
