@@ -26,6 +26,8 @@ const links = (
 
 const Navbar = () => {
   const { logout,user}=useContext(AuthContext)
+  console.log(user);
+
   
   return (
     <div className="bg-base-300 rounded-md">
@@ -57,7 +59,7 @@ const Navbar = () => {
           </div>
           <Link
             to="/"
-            className="text-2xl bg-[#0e0c57] text-white p-1  rounded-lg font-bold"
+            className="text-2xl bg-[#0e0c57] text-white p-1 md:ml-10 rounded-lg font-bold"
           >
             Book <span className="bg-[#046cf5] px-[2px] rounded-lg ">Hub</span>
           </Link>
@@ -65,19 +67,16 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-2">{links}</ul>
         </div>
-        <div className="navbar-end gap-2">
-          <div className="flex  md:flex-row items-center justify-between gap-2">
-            {user ? (
+        <div className="navbar-end gap-2 md:mr-10 ">
+          <div className="flex  md:flex-row items-center justify-between gap-2 md:gap-5">
+            {user?.email ? (
               <>
                 {/* Avatar with name on hover */}
                 <div className="relative group">
                   <div className="avatar ">
                     <div className="ring-primary ring-offset-base-100 w-10 mt-1 mx-1 rounded-full ring ring-offset-1">
                       <img
-                        src={
-                          user?.photoURL ||
-                          "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                        }
+                        src={user.photoURL}
                       ></img>
                     </div>
                   </div>

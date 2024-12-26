@@ -32,7 +32,7 @@ const AllBook = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <Helmet>
         <title>BookHub || All Book</title>
       </Helmet>
