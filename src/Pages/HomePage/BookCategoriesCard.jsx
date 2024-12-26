@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const BookCategoriesCard = ({book}) => {
@@ -35,7 +36,9 @@ const BookCategoriesCard = ({book}) => {
           <p className="text-gray-700 ">
             <strong>Quantity Available:</strong> {quantity}
           </p>
-          
+          <Link to={`/books/${_id}`}>
+            <button className="btn btn-primary mt-5">Details</button>
+          </Link>
         </div>
       </div>
     );

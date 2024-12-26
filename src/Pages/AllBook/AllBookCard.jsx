@@ -53,7 +53,7 @@ const AllBookCard = ({book}) => {
             <strong>Book Content:</strong>{" "}
             {truncateDescription(book_content, 10)}
           </p>
-          <Link to={`/books/${_id}`}>
+          <Link to={`/update/${_id}`}>
             <button className="btn btn-primary ">Update</button>
           </Link>
         </div>

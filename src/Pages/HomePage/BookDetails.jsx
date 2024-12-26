@@ -4,7 +4,7 @@ import { useLoaderData } from "react-router-dom";
 const BookDetails = () => {
     const book=useLoaderData()
     const {
-      _id,
+      // _id,
       title,
       image,
       quantity,
