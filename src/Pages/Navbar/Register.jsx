@@ -48,9 +48,10 @@ const Register = () => {
           });
           setUser(user);
           loading(true)
-          navigate("/");
+          
           
         });
+        navigate("/");
     }).catch(error=>{
       Swal.fire({
         icon: "error",
@@ -59,6 +60,7 @@ const Register = () => {
         
       });
         // console.log(error);
+        
     })
 
   };
