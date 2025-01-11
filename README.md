@@ -13,7 +13,8 @@ Website Live Link :- https://bookhub-995a9.web.app/
 BookHub - Library Management System
 BookHub is a library management system that allows users to manage books, keep track of their reading progress, and more. The system features a secure authentication system, using Firebase for frontend authentication, and provides a user-friendly interface built with React, Tailwind CSS, and DaisyUI. The backend is powered by Express, JWT authentication, MongoDB, and Node.js.
 
-Features--
+Features
+
 Authentication: Secure login and registration system using Firebase Authentication.
 
 Book Management: Add, update, delete, and view books in the library.
@@ -67,14 +68,25 @@ CORS
 Here’s a list of the required packages for  frontend
 
 React
+
 Firebase (for Firebase authentication)
+
 React Router DOM (for routing)
+
 Tailwind CSS (for styling)
+
 DaisyUI (for UI components)
+
 SweetAlert2 (for popups/notifications)
+
 React Slick (for carousels)
+
 Axios (for HTTP requests)
+
 React Icons (for icons)
+
 LocalForage (for local storage handling)
+
 Match-Sorter (for sorting/filtering data)
+
 Sort-By (for sorting data)
