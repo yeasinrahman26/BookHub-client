@@ -14,33 +14,54 @@ BookHub - Library Management System
 BookHub is a library management system that allows users to manage books, keep track of their reading progress, and more. The system features a secure authentication system, using Firebase for frontend authentication, and provides a user-friendly interface built with React, Tailwind CSS, and DaisyUI. The backend is powered by Express, JWT authentication, MongoDB, and Node.js.
 
 Features--
- Authentication: Secure login and registration system using Firebase Authentication.
- Book Management: Add, update, delete, and view books in the library.
- User-Friendly Interface: Built with React, Tailwind CSS, and DaisyUI for an attractive and responsive design.
- Protected Routes: Only authenticated users can access certain parts of the application.
- Real-time Data: Use of Firebase for managing user authentication and session management.
- Notifications: Integrated with SweetAlert2 for alerts and notifications.
- Carousel & Slick Slider: Display book covers and other elements with interactive carousels.
+Authentication: Secure login and registration system using Firebase Authentication.
+
+Book Management: Add, update, delete, and view books in the library.
+
+User-Friendly Interface: Built with React, Tailwind CSS, and DaisyUI for an attractive and responsive design.
+
+Protected Routes: Only authenticated users can access certain parts of the application.
+
+Real-time Data: Use of Firebase for managing user authentication and session management.
+
+
+Notifications: Integrated with SweetAlert2 for alerts and notifications.
+
+Carousel & Slick Slider: Display book covers and other elements with interactive carousels.
 
 
 Technologies Used
 
 Frontend:
-.React
-.Tailwind CSS
-.DaisyUI
-.React Router
-.Firebase (for authentication)
-.React-Slick (for carousels)
-.Axios (for HTTP requests)
-.SweetAlert2 (for notifications)
+
+
+React
+
+Tailwind CSS
+
+DaisyUI
+
+React Router
+
+Firebase (for authentication)
+
+React-Slick (for carousels)
+
+Axios (for HTTP requests)
+
+SweetAlert2 (for notifications)
+
 
 Backend:
-.Node.js
-.Express
-.MongoDB
-.JWT Authentication
-.CORS
+Node.js
+
+Express
+
+MongoDB
+
+JWT Authentication
+
+CORS
 
 
 Here’s a list of the required packages for  frontend
