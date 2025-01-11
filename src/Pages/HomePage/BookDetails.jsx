@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import AuthContext from "../../Auth/AuthContext";
 
 const BookDetails = () => {
   const book = useLoaderData();
-  
+
   const { user } = useContext(AuthContext);
   const {
     _id,
@@ -45,7 +45,7 @@ const BookDetails = () => {
       returnDate,
     };
 
-    fetch("http://localhost:5000/borrowed", {
+    fetch("https://library-ms-server-two.vercel.app/borrowed", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -65,8 +65,7 @@ const BookDetails = () => {
           console.log(data.insertedId);
           const modal = document.getElementById("auth-modal");
           modal.checked = false;
-        } 
-        else {
+        } else {
           Swal.fire({
             position: "top-center",
             icon: "error",

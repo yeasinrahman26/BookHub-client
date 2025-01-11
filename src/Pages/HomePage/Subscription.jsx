@@ -13,10 +13,10 @@ const Subscription = () => {
               <h3 className="text-2xl font-semibold mb-4">1 Month</h3>
               <p className="text-xl text-gray-500 mb-6">$19.99</p>
               <p className="text-gray-600 mb-6">
-                Perfect for those who want to explore our collection without a
+                 who want to explore our collection without a
                 long-term commitment.
               </p>
-              <button className="btn btn-primary">Subscribe</button>
+              {/* <button className="btn btn-primary">Subscribe</button> */}
             </div>
 
             <div className="p-8 bg-white rounded-lg shadow-lg transition-all duration-300 border-2 border-blue-500">
@@ -26,7 +26,7 @@ const Subscription = () => {
                 Ideal for readers who wish to delve deeper into our library at a
                 discounted rate.
               </p>
-              <button className="btn btn-primary">Subscribe</button>
+              {/* <button className="btn btn-primary">Subscribe</button> */}
             </div>
 
             <div className="p-8 bg-white rounded-lg shadow-lg transition-all duration-300 border-2 border-blue-500">
@@ -36,7 +36,7 @@ const Subscription = () => {
                 Our best value plan, offering unlimited access to our entire
                 collection for a year.
               </p>
-              <button className="btn btn-primary">Subscribe</button>
+              {/* <button className="btn btn-primary">Subscribe</button> */}
             </div>
           </div>
         </div>

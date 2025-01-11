@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 const BorrowedBookCard = ({ card }) => {
   const { _id, title, image, quantity, author_name, category, returnDate } =
     card;
-    
+
   const handleReturn = (_id) => {
     //    e.preventDefault();
     console.log(_id);
@@ -17,7 +17,7 @@ const BorrowedBookCard = ({ card }) => {
       confirmButtonText: "Yes, return it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/borrowed/${_id}`, {
+        fetch(`https://library-ms-server-two.vercel.app/borrowed/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

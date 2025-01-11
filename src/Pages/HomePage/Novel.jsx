@@ -3,10 +3,9 @@ import BookCategoriesCard from "./BookCategoriesCard";
 
 const Novel = () => {
   const [Categories, setCategories] = useState([]);
-  
 
   useEffect(() => {
-    fetch(`http://localhost:5000/books/category/Novel`)
+    fetch(`https://library-ms-server-two.vercel.app/books/category/Novel`)
       .then((res) => res.json())
       .then((data) => {
         setCategories(data);
@@ -14,11 +13,11 @@ const Novel = () => {
   }, []);
 
   return (
-    <div className="my-10">
-      <h1 className="text-center my-10 font-bold text-5xl">
+    <div className="my-20 min-h-screen">
+      <h1 className="text-center mb-20 font-bold text-5xl">
         Book Categories: Novel
       </h1>
-      <div className="grid px-4 gap-5 grid-cols-3">
+      <div className="grid grid-cols-1 px-4 gap-5 md:grid-cols-3">
         {Categories.map((book) => (
           <BookCategoriesCard key={book._id} book={book}></BookCategoriesCard>
         ))}

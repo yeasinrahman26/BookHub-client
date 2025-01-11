@@ -20,7 +20,7 @@ const UpdateBook = () => {
       rating: initialData.rating,
       image: initialData.image,
     };
-    fetch(`http://localhost:5000/books/${id}`, {
+    fetch(`https://library-ms-server-two.vercel.app/books/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

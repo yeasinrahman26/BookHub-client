@@ -3,7 +3,7 @@ import MainLayout from "../Layout/MainLayout";
 import Home from "../Pages/HomePage/Home";
 import Login from "../Pages/Navbar/Login";
 import Register from "../Pages/Navbar/Register";
-import AllBook from '../Pages/AllBook/AllBook'
+import AllBook from "../Pages/AllBook/AllBook";
 import AddBook from "../Pages/AddBook/AddBook";
 import BorrowedBooks from "../Pages/BorrowedBooks/BorrowedBooks";
 import PrivetRoute from "./PrivetRoute";
@@ -78,7 +78,7 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/books/${params.id}`),
+          fetch(`https://library-ms-server-two.vercel.app/books/${params.id}`),
       },
       {
         path: "allBook",
@@ -96,7 +96,7 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/books/${params.id}`),
+          fetch(`https://library-ms-server-two.vercel.app/books/${params.id}`),
       },
       {
         path: "addBook",

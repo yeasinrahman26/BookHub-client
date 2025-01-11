@@ -4,33 +4,44 @@ import AuthContext from "../../Auth/AuthContext";
 import { IoMdLogOut } from "react-icons/io";
 
 
-const links = (
-  <>
-    <li>
-      <NavLink to="/">Home</NavLink>
-    </li>
-    <li>
-      <NavLink to="/allBook">All Books</NavLink>
-    </li>
-    <li>
 
-      <NavLink to="/addBook">Add Book</NavLink>
-    </li>
-    <li>
-   
-      <NavLink to="/borrowedBooks">Borrowed Books</NavLink>
-    </li>
-  </>
-);
 
 
 const Navbar = () => {
   const { logout,user}=useContext(AuthContext)
+  const links = (
+    <>
+      <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      {user ? (
+        <li>
+          <NavLink to="/allBook">All Books</NavLink>
+        </li>
+      ) : (
+        ""
+      )}
+      {user ? (
+        <li>
+          <NavLink to="/addBook">Add Book</NavLink>
+        </li>
+      ) : (
+        ""
+      )}
+      {user ? (
+        <li>
+          <NavLink to="/borrowedBooks">Borrowed Books</NavLink>
+        </li>
+      ) : (
+        ""
+      )}
+    </>
+  );
   
 
   
   return (
-    <div className="bg-base-300 rounded-md">
+    <div className="bg-base-300  rounded-md">
       <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown">
@@ -75,9 +86,7 @@ const Navbar = () => {
                 <div className="relative group">
                   <div className="avatar ">
                     <div className="ring-primary ring-offset-base-100 w-10 mt-1 mx-1 rounded-full ring ring-offset-1">
-                      <img
-                        src={user.photoURL}
-                      ></img>
+                      <img src={user.photoURL}></img>
                     </div>
                   </div>
                   <div className="absolute -bottom-12 md:bottom-0 w-40 -left-12 md:-left-40 right-0 px-0 pb-3  text-black font-bold  opacity-0 group-hover:opacity-100 transition-opacity">

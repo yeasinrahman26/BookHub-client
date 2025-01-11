@@ -9,7 +9,7 @@ const AllBook = () => {
   const [sortedBooks, setSortedBooks] = useState([]); // State for sorted books
 
   useEffect(() => {
-    fetch("http://localhost:5000/books")
+    fetch("https://library-ms-server-two.vercel.app/books")
       .then((res) => res.json())
       .then((data) => {
         setBooks(data);
@@ -32,7 +32,7 @@ const AllBook = () => {
   };
 
   return (
-    <div className="">
+    <div className="min-h-screen">
       <Helmet>
         <title>BookHub || All Book</title>
       </Helmet>

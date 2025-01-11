@@ -39,7 +39,7 @@ const Banner = () => {
     ];
     return (
       <div className="  px-10  ">
-        <div className="w-full   py-10 mx-auto">
+        <div className="w-full   py-0 mx-auto">
           <Slider  {...sliderSettings}>
             {slides.map((slide) => (
               <div

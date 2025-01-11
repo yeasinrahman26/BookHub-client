@@ -1,15 +1,17 @@
 import { Helmet } from "react-helmet-async";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AddBook = () => {
+  const navigate=useNavigate()
   const handleAddBook = (e) => {
     e.preventDefault();
-    const form=e.target
+    const form = e.target;
     const formData = new FormData(e.target);
     const initialData = Object.fromEntries(formData.entries());
     console.log(initialData);
 
-    fetch('http://localhost:5000/books', {
+    fetch("https://library-ms-server-two.vercel.app/books", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -27,11 +29,10 @@ const AddBook = () => {
             showConfirmButton: false,
             timer: 1500,
           });
-       
         }
       });
-      form.reset()
-
+    form.reset();
+     navigate('/allBook')
   };
 
   return (
